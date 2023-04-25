@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block and inline boxes</title>
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<body>
+
+    <!-- https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model -->
+
+    <!-- Block boxes and inline boxes type refers to how the box behaves in terms of page flow and in relation to other boxes on the page. Boxes have an inner display type and an outer display type.
+
+    In general, you can set various values for the display type using the display property, which can have various values. -->
+
+
+
+    <!-- The example below has three different HTML elements, all of which have an outer display type of block. -->
+    <!-- * A paragraph with a border added in CSS. The browser renders this as a block box. The paragraph starts on a new line and extends the entire available width. -->
+    <!-- * A list, which is laid out using display: flex. This establishes flex layout for the children of the container, which are flex items. The list itself is a block box and — like the paragraph — expands to the full container width and breaks onto a new line. -->
+    <!-- * A block-level paragraph, inside which are two <span> elements. These elements would normally be inline, however, one of the elements has a class of "block" which gets set to display: block. -->
+    <p class="p-block">I am a paragraph. A short one.</p>
+    <ul class="ul-block">
+        <li class="li-block">Item One</li>
+        <li class="li-block">Item Two</li>
+        <li class="li-block">Item Three</li>
+    </ul>
+    <p class="p-block">I am another paragraph. Some of the <span class="s-block">words</span> have been wrapped in a <span>span element</span>.</p>
+
+    <!-- In the next example, we can see how inline elements behave. -->
+    <!-- * The <span> elements in the first paragraph are inline by default and so do not force line breaks. -->
+    <!-- * The <ul> element that is set to display: inline-flex creates an inline box containing some flex items. -->
+    <!-- * The two paragraphs are both set to display: inline. The inline flex container and paragraphs all run together on one line rather than breaking onto new lines (as they would do if they were displaying as block-level elements). -->
+    <!-- To toggle between the display modes, you can change display: inline to display: block or display: inline-flex to display: flex. -->
+    <p class="p-sp">
+        I am a paragraph. Some of the
+        <span class="s-inline">words</span> have been wrapped in a
+        <span class="s-inline">span element</span>.
+    </p>     
+    <ul class="ul-inline">
+      <li class="li-inline">Item One</li>
+      <li class="li-inline">Item Two</li>
+      <li class="li-inline">Item Three</li>
+    </ul>
+    <p class="p-inline">I am a paragraph. A short one.</p>
+    <p class="p-inline">I am another paragraph. Also a short one.</p>
+
+    <!-- The key thing to remember for now is: Changing the value of the display property can change whether the outer display type of a box is block or inline. This changes the way it displays alongside other elements in the layout. -->
+
+    <!-- Using display: inline-block -->
+    <!-- display: inline-block is a special value of display, which provides a middle ground between inline and block. Use it if you do not want an item to break onto a new line, but do want it to respect width and height and avoid the overlapping seen above. -->
+    <!-- * The width and height properties are respected. -->
+    <!-- * padding, margin, and border will cause other elements to be pushed away from the box. -->
+    <!-- It does not, however, break onto a new line, and will only become larger than its content if you explicitly add width and height properties. -->
+    
+    <p class="p-inline-block">
+        I am a paragraph and this is a <span class="s-inline-block">span</span> inside that paragraph. A span is an inline element and so does not respect width and height.
+    </p>     
+
+    <!-- Where this can be useful is when you want to give a link a larger hit area by adding padding. <a> is an inline element like <span>; you can use display: inline-block to allow padding to be set on it, making it easier for a user to click the link. 
+    You see this fairly frequently in navigation bars.
+    * See: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#the_box_model_and_inline_boxes -->
+
+</body>
+
+</html>
