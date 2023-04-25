@@ -6,10 +6,39 @@
 
 .box-one {
     background-color: #EB5757;
-    border: 0 solid #9851E0;
+    /* Add padding to box-one */
+    /* Padding occurs inside of the background of the element - inside the border, and around the content */
+    padding: 20px;
+    /* Increase the border size */
+    /* The border goes around the padding of an element, which in turn is around the content */
+    /* border: 0 solid #9851E0; */
+    border: 20px solid #9851E0;
+    /* Add margin to the element */
+    /* This adds spacing on the outside of the border */
+    /* Margin is used to space two eleemnts apart from each other */
+    margin: 60px;
+    /* Specify distinct sizes of content using the height and width property */
+    height: 100px;
+    width: 100px;
 }
+
+/* .box-two {
+    background-color: #2D9CDB;
+    border: 0 solid #27AE60;
+} */
 
 .box-two {
     background-color: #2D9CDB;
     border: 0 solid #27AE60;
+    padding: 20px;
+    border: 20px solid #9851E0;
+    /* If we add a 60px margin to the box, note that the boxes don't actually move further away */
+    /* This is because, in the box model, margin collapses between two elements which are next to each other and share a margin - here, whichever margin is the largest will be used beween them */
+    margin: 60px;
+    /* Note that, in the box model, the height/width, padding and border are added together */
+    height: 100px;
+    width: 100px;
+    /* If want to change this, so that the specified height and width are the actual height and width of the element, then need to add the following */
+    /* This box-sizing property is often used in the universal (*) selector, so that every element is using border-box */
+    box-sizing: border-box;
 }
